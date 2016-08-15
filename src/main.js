@@ -65,7 +65,6 @@ function TimekitBooking() {
   var timekitSetupUser = function() {
 
     timekit.setUser(config.authEmail, config.apiToken);   // LB edit to accept a differnt email address for auth so a single API key can be used
-    console.log("auth user is"+config.authEmail);
   };
 
   // Fetch availabile time through Timekit SDK
