@@ -67,6 +67,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	
 	// External depenencies
+	
 	var $               = __webpack_require__(1);
 	window.fullcalendar = __webpack_require__(2);
 	var moment          = window.moment = __webpack_require__(3);
@@ -116,10 +117,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  };
 	
 	  // Setup the Timekit SDK with correct credentials
+	
 	  var timekitSetupUser = function() {
 	
-	    timekit.setUser(config.email, config.apiToken);
-	
+	    timekit.setUser(config.authEmail, config.apiToken);   // LB edit to accept a differnt email address for auth so a single API key can be used
+	    console.log("auth user is"+config.authEmail);
 	  };
 	
 	  // Fetch availabile time through Timekit SDK

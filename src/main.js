@@ -11,6 +11,7 @@
  */
 
 // External depenencies
+
 var $               = require('jquery');
 window.fullcalendar = require('fullcalendar');
 var moment          = window.moment = require('moment');
@@ -60,10 +61,11 @@ function TimekitBooking() {
   };
 
   // Setup the Timekit SDK with correct credentials
+
   var timekitSetupUser = function() {
 
-    timekit.setUser(config.email, config.apiToken);
-
+    timekit.setUser(config.authEmail, config.apiToken);   // LB edit to accept a differnt email address for auth so a single API key can be used
+    console.log("auth user is"+config.authEmail);
   };
 
   // Fetch availabile time through Timekit SDK
